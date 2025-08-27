@@ -1,24 +1,30 @@
+<script lang="ts">
+  import Shlopoetry from "$lib/components/Shlopoetry.svelte";
+</script>
+
 <h1>Shlop</h1>
 
-<p>everything is slop</p>
-<p>nothing is slop</p>
-<p>shlop is slop</p>
-<p>you are slop</p>
-<p>i am slop</p>
-<p>we are all slop</p>
-<p>the universe is slop</p>
-<p>life is slop</p>
-<p>death is slop</p>
-<p>existence is slop</p>
-<p>non-existence is slop</p>
-<p>reality is slop</p>
-<p>illusion is slop</p>
-<p>time is slop</p>
-<p>space is slop</p>
-<p>matter is slop</p>
-<p>energy is slop</p>
-<p>consciousness is slop</p>
-<p>unconsciousness is slop</p>
-<p>everything is slop</p>
-<p>nothing is slop</p>
-<p>shlop is slop</p>
+<Shlopoetry interval={1000} lines={[
+  'everything is slop',
+  'nothing is slop',
+  'shlop is slop',
+  'you are slop',
+  'i am slop',
+  'we are all slop',
+  'the universe is slop',
+  'life is slop',
+  'death is slop',
+  'existence is slop',
+  'non-existence is slop',
+  'reality is slop',
+  'illusion is slop',
+  'time is slop',
+  'space is slop',
+  'matter is slop',
+  'energy is slop',
+  'consciousness is slop',
+  'unconsciousness is slop',
+  'everything is slop',
+  'nothing is slop',
+  'shlop is slop',
+]} />
