@@ -1,3 +1,8 @@
+<script lang="ts">
+  import "@fontsource/coral-pixels";
+  import "./landing.css";
+</script>
+
 <h1>Shlop</h1>
 
 <p>everything is slop</p>
