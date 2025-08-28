@@ -21,6 +21,7 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
-		"@fontsource/coral-pixels": "^5.2.1"
+		"@fontsource/coral-pixels": "^5.2.1",
+		"buffer": "^6.0.3"
 	}
 }
