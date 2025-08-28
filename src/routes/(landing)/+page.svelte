@@ -1,9 +1,12 @@
 <script lang="ts">
   import "@fontsource/coral-pixels";
   import "./landing.css";
+  import Link from "$lib/components/Link.svelte";
 </script>
 
 <h1>Shlop</h1>
+
+<Link href="/units">Unit Creator</Link>
 
 <p>everything is slop</p>
 <p>nothing is slop</p>
