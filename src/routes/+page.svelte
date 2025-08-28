@@ -1,4 +1,10 @@
+<script>
+  import Link from "$lib/components/Link.svelte";
+</script>
+
 <h1>Shlop</h1>
+
+<Link href="/test-page">Visit Test Page</Link>
 
 <p>everything is slop</p>
 <p>nothing is slop</p>
