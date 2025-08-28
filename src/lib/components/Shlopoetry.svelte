@@ -1,11 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import ShloppyText from './ShloppyText.svelte';
 
-  let { interval = 400, lines }: { interval: number, lines: string[] } = $props();
+  let { interval = 400, lines }: { interval: number; lines: string[] } = $props();
 
   let index = $state(0);
-  let words = $derived(lines[index].split(' '));
-  
+
   onMount(() => {
     const timer = setInterval(() => {
       index = (index + 1) % lines.length;
@@ -16,7 +16,7 @@
 </script>
 
 <span>
-  {#each words as word}
-    <span>{word + ' '}</span>
-  {/each}
+  {#key lines[index]}
+    <ShloppyText text={lines[index]} />
+  {/key}
 </span>
