@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import ShloppyText from './ShloppyText.svelte';
+  import { onMount } from "svelte";
+  import ShloppyText from "./ShloppyText.svelte";
 
-  let { interval = 400, lines }: { interval: number; lines: string[] } = $props();
+  let { interval, lines, opacity = 1 }: { interval: number; lines: string[]; opacity?: number } = $props();
 
   let index = $state(0);
 
@@ -15,8 +15,20 @@
   });
 </script>
 
-<span>
+<span class="cycler" style="opacity: {opacity}">
   {#key lines[index]}
-    <ShloppyText text={lines[index]} />
+    <ShloppyText text={lines[index]}/>
   {/key}
 </span>
+
+<style>
+  .cycler {
+    position: relative;
+    display: inline-block;
+  }
+
+  .cycler > :global(*) {
+    position: absolute;
+    inset: 0;
+  }
+</style>

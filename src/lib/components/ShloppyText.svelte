@@ -1,11 +1,12 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
 
   let { text }: { text: string } = $props();
   let spans: HTMLSpanElement[] = [];
 
   let rafID: number;
-  let t = 0;
+  let t = Math.random() * 2 * Math.PI;
 
   function animate() {
     t = (t + 0.01) % (2 * Math.PI);
@@ -27,7 +28,7 @@
   });
 </script>
 
-<div class="wrapper">
+<div class="wrapper" in:fade={{ duration: 1000 }} out:fade={{ duration: 1000 }}>
   {#each text as char, i}
     <span bind:this={spans[i]}>{char}</span>
   {/each}
@@ -36,9 +37,11 @@
 <style>
   .wrapper {
     display: flex;
-    gap: 0.05em;
-    font-size: 5rem;
+    justify-content: center;
+    gap: 0.08em;
+    font-size: 6vw;
     filter: contrast(160%);
     will-change: transform, filter;
+    white-space: pre;
   }
 </style>
