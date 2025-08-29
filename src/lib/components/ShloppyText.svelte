@@ -28,10 +28,22 @@
 		rafID = requestAnimationFrame(animate);
 	}
 
-	onMount(() => {
-		animate();
-		return () => cancelAnimationFrame(rafID);
-	});
+  function handleVisibility() {
+      if (document.hidden) {
+          cancelAnimationFrame(rafID);
+      } else {
+          animate();
+      }
+  }
+
+  onMount(() => {
+      document.addEventListener("visibilitychange", handleVisibility);
+      animate();
+      return () => {
+          cancelAnimationFrame(rafID);
+          document.removeEventListener("visibilitychange", handleVisibility);
+      };
+  });
 </script>
 
 <div class="wrapper" in:fade={{ duration: 1000 }} out:fade={{ duration: 1000 }}>
@@ -55,5 +67,9 @@
 
 	span {
 		display: inline-block;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 	}
 </style>
