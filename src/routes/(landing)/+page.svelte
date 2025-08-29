@@ -36,9 +36,13 @@
 <div>
   <h1>Shlop</h1>
 
-  <div class="hero">
-    <Shlopoetry interval={3000} lines={shlopoem} />
-    <Shlopoetry interval={200} lines={shlopoem} opacity={0.6} />
+  <div class="hero-row">
+    <div class="hero-layer">
+     <Shlopoetry interval={4000} lines={shlopoem} />
+    </div>
+    <div class="hero-layer">
+      <Shlopoetry interval={300} lines={shlopoem} opacity={0.6} />
+    </div>
   </div>
 
   <Link href="/units">Unit Creator</Link>

@@ -2,7 +2,15 @@
   import { onMount } from "svelte";
   import ShloppyText from "./ShloppyText.svelte";
 
-  let { interval, lines, opacity = 1 }: { interval: number; lines: string[]; opacity?: number } = $props();
+  let {
+    interval,
+    lines,
+    opacity = 1,
+  }: {
+    interval: number;
+    lines: string[];
+    opacity?: number;
+  } = $props();
 
   let index = $state(0);
 
@@ -14,12 +22,17 @@
     return () => clearInterval(timer);
   });
 </script>
+<div class="cycler" style="opacity:{opacity}">
+  <div class="spacer">
+    <ShloppyText text={lines[index]} />
+  </div>
 
-<span class="cycler" style="opacity: {opacity}">
   {#key lines[index]}
-    <ShloppyText text={lines[index]}/>
+    <div class="slide">
+      <ShloppyText text={lines[index]} />
+    </div>
   {/key}
-</span>
+</div>
 
 <style>
   .cycler {
@@ -27,8 +40,15 @@
     display: inline-block;
   }
 
-  .cycler > :global(*) {
+  .spacer {
+    visibility: hidden;
+  }
+
+  .slide {
     position: absolute;
     inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>

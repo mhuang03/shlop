@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
 
   let { text }: { text: string } = $props();
+
   let spans: HTMLSpanElement[] = [];
 
   let rafID: number;
@@ -14,7 +15,7 @@
       const wave = Math.sin(t + i * 0.5);
       const scaleY = 1 + wave * 0.3;
       const scaleX = 1 - wave * 0.2;
-      const y = wave * 10;
+      const y = wave * 10; 
 
       span.style.transform = `translateY(${y}px) scale(${scaleX}, ${scaleY})`;
     });
@@ -36,12 +37,18 @@
 
 <style>
   .wrapper {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     gap: 0.08em;
     font-size: 6vw;
     filter: contrast(160%);
     will-change: transform, filter;
     white-space: pre;
+    width: 100vw;
+    line-height: 1;
+  }
+
+  span {
+    display: inline-block;
   }
 </style>
