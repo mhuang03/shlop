@@ -1,6 +1,29 @@
 <script lang="ts">
   import "@fontsource/coral-pixels";
-  import Link from "$lib/components/Link.svelte";
+  import Link from "$lib/components/Link.svelte"
+  import Shlopoetry from "$lib/components/Shlopoetry.svelte";
+
+  const shlopoem = [
+    "everything is shlop",
+    "nothing is shlop",
+    "slop is shlop",
+    "you are shlop",
+    "i am shlop",
+    "we are all shlop",
+    "the universe is shlop",
+    "life is shlop",
+    "death is shlop",
+    "existence is shlop",
+    "non-existence is shlop",
+    "reality is shlop",
+    "illusion is shlop",
+    "time is shlop",
+    "space is shlop",
+    "matter is shlop",
+    "energy is shlop",
+    "consciousness is shlop",
+    "unconsciousness is shlop",
+  ]
 </script>
 
 <svelte:head>
@@ -9,29 +32,18 @@
   </style>
 </svelte:head>
 
-<h1>Shlop</h1>
 
-<Link href="/units">Unit Creator</Link>
+<div>
+  <h1>Shlop</h1>
 
-<p>everything is slop</p>
-<p>nothing is slop</p>
-<p>shlop is slop</p>
-<p>you are slop</p>
-<p>i am slop</p>
-<p>we are all slop</p>
-<p>the universe is slop</p>
-<p>life is slop</p>
-<p>death is slop</p>
-<p>existence is slop</p>
-<p>non-existence is slop</p>
-<p>reality is slop</p>
-<p>illusion is slop</p>
-<p>time is slop</p>
-<p>space is slop</p>
-<p>matter is slop</p>
-<p>energy is slop</p>
-<p>consciousness is slop</p>
-<p>unconsciousness is slop</p>
-<p>everything is slop</p>
-<p>nothing is slop</p>
-<p>shlop is slop</p>
+  <div class="hero-row">
+    <div class="hero-layer">
+     <Shlopoetry interval={4000} lines={shlopoem} />
+    </div>
+    <div class="hero-layer">
+      <Shlopoetry interval={300} lines={shlopoem} opacity={0.6} />
+    </div>
+  </div>
+
+  <Link href="/units">Unit Creator</Link>
+</div>
