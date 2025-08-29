@@ -1,4 +1,6 @@
 <script lang="ts">
+  import "@fontsource/coral-pixels";
+  import Link from "$lib/components/Link.svelte"
   import Shlopoetry from "$lib/components/Shlopoetry.svelte";
 
   const shlopoem = [
@@ -24,16 +26,20 @@
   ]
 </script>
 
-<h1>Shlop</h1>
+<svelte:head>
+  <style>
+    @import "./landing.css";
+  </style>
+</svelte:head>
 
-<div class="hero">
-  <Shlopoetry interval={3000} lines={shlopoem} />
-  <Shlopoetry interval={200} lines={shlopoem} opacity={0.6} />
+
+<div>
+  <h1>Shlop</h1>
+
+  <div class="hero">
+    <Shlopoetry interval={3000} lines={shlopoem} />
+    <Shlopoetry interval={200} lines={shlopoem} opacity={0.6} />
+  </div>
+
+  <Link href="/units">Unit Creator</Link>
 </div>
-
-<style>
-  .hero {
-    display: flex; 
-    justify-content: center;
-  }
-</style>

@@ -1,0 +1,10 @@
+body {
+  font-family: "Coral Pixels", system-ui;
+}
+
+.hero {
+  display: flex; 
+  justify-content: center;
+  position: relative;
+  height: 8rem;
+}
