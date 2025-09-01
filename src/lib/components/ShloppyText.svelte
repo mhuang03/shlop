@@ -54,19 +54,19 @@
 
 <style>
 	.wrapper {
-		display: inline-flex;
-		justify-content: center;
-		gap: 0.08em;
-		font-size: 6vw;
-		filter: contrast(160%);
-		will-change: transform, filter;
-		white-space: pre;
-		width: 100vw;
-		line-height: 1;
+	  display: flex;
+	  justify-content: center;
+	  gap: 0.08em;
+	  font-size: 6vw;
+	  filter: contrast(160%);
+	  will-change: transform, filter;
+	  white-space: pre;
+	  width: 100%;
+	  line-height: 1;
 	}
 
 	span {
-		display: inline-block;
+    display: inline-block;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */

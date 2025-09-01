@@ -9,4 +9,7 @@ body {
 .hero-layer { 
   grid-column: 1;
   grid-row: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
