@@ -46,4 +46,5 @@
   </div>
 
   <Link href="/units">Unit Creator</Link>
+  <Link href="/fungame">Fun Game</Link>
 </div>
