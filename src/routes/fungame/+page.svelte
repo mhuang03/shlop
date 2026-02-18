@@ -1,24 +1,14 @@
-<script>
-  import { onMount } from 'svelte';
-
-  onMount(() => {
-    const script = document.createElement('script');
-    script.src = 'https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js';
-    script.onload = () => {
-      if (typeof load === 'function') {
-        load('/fungame.wasm');
-      }
-    };
-    document.head.appendChild(script);
-  });
-</script>
-
 <svelte:head>
-  <title>TITLE</title>
+  <title>fungame</title>
 </svelte:head>
 
 <div class="fungame-container">
-  <canvas id="glcanvas" tabindex="1"></canvas>
+  <a href="/" class="back-link">← Home</a>
+  <iframe
+    class="fungame-iframe"
+    title="Fun Game"
+    src="/fungame.html"
+  />
 </div>
 
 <style>
@@ -34,9 +24,25 @@
     background: black;
     z-index: 0;
   }
-  .fungame-container :global(canvas) {
+  .fungame-iframe {
+    display: block;
     width: 100%;
     height: 100%;
-    display: block;
+    border: none;
+  }
+  .back-link {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 1;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.35rem 0.6rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem;
+  }
+  .back-link:hover {
+    background: rgba(0, 0, 0, 0.75);
   }
 </style>
